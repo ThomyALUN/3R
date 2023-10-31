@@ -62,3 +62,4 @@ Para usarlo, realizar los siguientes pasos:
 4. Al hacer clic en "Enviar foto", se reconocerá automáticamente el elemento y sugerirá el contenedor correcto para colocarlo.
 5. Repita el proceso para otros artículos.
 
+Basado en: https://github.com/jimmyzhng/BinIt
