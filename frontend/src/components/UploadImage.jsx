@@ -11,8 +11,31 @@ export default function UploadImage() {
     imageAsFile: null,
     imageResult: null,
   });
-
+  const [tipoBasura, setTipoBasura] = useState(null);
   // green, black (landfill), yellow (clean paper), blue (recycle)
+
+  const reproducirAudio = (data)=>{
+
+    if(data==="blue"){
+      setTipoBasura('Reciclaje');
+    }
+    else if(data==="green"){
+      setTipoBasura('Residuos orgánicos');
+    }
+    else if(data==="black"){
+      setTipoBasura('Vertedero');
+    }
+    else if(data==="yellow"){
+      setTipoBasura('Papel');
+    } else if(data==="false"){
+      setTipoBasura('No identificado');
+    }
+
+
+    
+
+
+  }
 
   const handleFileSelect = (event) => {
     // console.log(event.target.files[0])
@@ -24,6 +47,7 @@ export default function UploadImage() {
   };
 
   const handleUpload = (event) => {
+    var sonido;
     event.preventDefault();
 
     const reader = new FileReader();
@@ -39,7 +63,34 @@ export default function UploadImage() {
           },
         })
         .then((res) => {
+          console.log("res--data",res.data);
           console.log("res", res);
+          
+          //Llama a la función
+          if(res.data==="blue"){
+            sonido='Reciclaje';
+          }
+          else if(res.data==="green"){
+            sonido='Residuos orgánicos';
+          }
+          else if(res.data==="black"){
+            sonido='Vertedero';
+          }
+          else if(res.data==="yellow"){
+            sonido='Papel';
+          } else if(res.data==="false"){
+            sonido='No identificado';
+          }
+
+          if (res.data != null){
+            const synth = window.speechSynthesis;
+            const utterance = new SpeechSynthesisUtterance(sonido);
+            synth.speak(utterance);
+          }
+          
+          reproducirAudio(res.data);
+          console.log("hola");
+
           setState((prev) => ({ ...prev, imageResult: res.data }));
           document.querySelector("input[type='file']").value = "";
         })
@@ -47,8 +98,9 @@ export default function UploadImage() {
           console.log(err);
         });
     };
+    
   };
-
+  
   return (
     <div className="image-upload-cont">
       {state.imageResult && (
@@ -79,17 +131,9 @@ export default function UploadImage() {
       )}
 
       <div className={`upload-info ${state.imageResult}`}>
-        {state.imageResult
-          ? state.imageResult === "blue"
-            ? "Recycling"
-            : state.imageResult === "green"
-            ? "Compost"
-            : state.imageResult === "black"
-            ? "Landfill"
-            : state.imageResult === "yellow"
-            ? "Paper"
-            : null
-          : "Welcome to BinIt!"}
+        {
+          tipoBasura
+        }
       </div>
 
       <div className={`image-with-buttons ${state.imageResult}`}>
