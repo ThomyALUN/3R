@@ -3,21 +3,17 @@ from flask_cors import CORS
 from obj_detect import trash_detect
 import base64
 import numpy as np
-import pyttsx3
 from torchvision import models
-
 
 app = Flask(__name__)
 CORS(app)
 
 listoftrash = ["broccoli", "wooden spoon", "band aid", 
                 "plastic bag", "toilet tissue, toilet paper, bathroom tissue", 
-                "paper towel", "diaper, nappy, napkin", "beer bottle", "cup","cucumber, cuke", "wooden spoon"
-                "water bottle", "pop bottle, soda bottle","packet"]
+                "paper towel", "diaper, nappy, napkin", "beer bottle", "cup"]
 
 bin_sort = {
     "broccoli" : "green", 
-    "cucumber, cuke":"green",
     "wooden spoon" : "green", 
     "band aid" : "black", 
     "plastic bag" : "black",
@@ -25,16 +21,13 @@ bin_sort = {
     "paper towel" : "yellow",
     "diaper, nappy, napkin" : "black",
     "beer bottle" : "blue",
-    "cup" : "green",
-    "water bottle": "blue",
-    "pop bottle, soda bottle":"blue",
-    "packet":"yellow"
+    "cup" : "green"
 }
 
 ResNetWeights = models.ResNet152_Weights.IMAGENET1K_V2
 model = models.resnet152(weights=ResNetWeights)
 
-with open('./imagenet_classes.txt') as f:
+with open('./backend/imagenet_classes.txt') as f:
     classes = [line.strip() for line in f.readlines()]
 
 @app.route("/", methods=["GET", "POST"])
