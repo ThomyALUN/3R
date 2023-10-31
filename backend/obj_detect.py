@@ -20,8 +20,9 @@ def trash_detect(img, listoftrash, bin_sort, ResNetWeights, model, classes):
     _, indices = torch.sort(out, descending=True)
     percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
     top10 = [(classes[idx].lower(), percentage[idx].item()) for idx in indices[0][:10]]
-
+    print(top10)
     for obj in top10:
         if obj[0] in listoftrash:
+            print(obj[0])
             return( bin_sort[ obj[0] ] )
-    return("Not Found!")
+    return("false")
