@@ -56,9 +56,9 @@ python app.py
 
 Para usarlo, realizar los siguientes pasos:
 
-1. Abra la aplicación BinIt en su navegador web.
-2. Haga clic en el botón "Seleccionar foto" y elija una imagen de su elección.
+1. Abra la aplicación en su navegador web.
+2. Haga clic en el botón "Cargar foto" y elija una imagen de su elección.
 3. Al hacer clic, una vista previa de su imagen se mostrará en nuestra aplicación.
-4. Al hacer clic en cargar imagen, se reconocerá automáticamente el elemento y sugerirá el contenedor correcto para colocarlo.
+4. Al hacer clic en "Enviar foto", se reconocerá automáticamente el elemento y sugerirá el contenedor correcto para colocarlo.
 5. Repita el proceso para otros artículos.
 
