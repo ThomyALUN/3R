@@ -25,4 +25,4 @@ def trash_detect(img, listoftrash, bin_sort, ResNetWeights, model, classes):
         if obj[0] in listoftrash:
             print(obj[0])
             return( bin_sort[ obj[0] ] )
-    return("false")
+    return("black")

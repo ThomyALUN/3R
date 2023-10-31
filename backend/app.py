@@ -10,25 +10,29 @@ from torchvision import models
 app = Flask(__name__)
 CORS(app)
 
-listoftrash = ["broccoli", "wooden spoon", "band aid", 
+listoftrash = ["broccoli", "wooden spoon", "band aid", "screw",
                 "plastic bag", "toilet tissue, toilet paper, bathroom tissue", 
-                "paper towel", "diaper, nappy, napkin", "beer bottle", "cup","cucumber, cuke", "wooden spoon"
-                "water bottle", "pop bottle, soda bottle","packet"]
+                "paper towel", "diaper, nappy, napkin", "beer bottle", "cup",
+                "cucumber, cuke", "wooden spoon", "water bottle", 
+                "pop bottle, soda bottle","packet", "granny smith"]
 
 bin_sort = {
-    "broccoli" : "green", 
-    "cucumber, cuke":"green",
-    "wooden spoon" : "green", 
+    "broccoli" : "black", 
+    "cucumber, cuke":"black",
+    "wooden spoon" : "black", 
     "band aid" : "black", 
     "plastic bag" : "black",
     "toilet tissue, toilet paper, bathroom tissue" : "yellow", 
     "paper towel" : "yellow",
     "diaper, nappy, napkin" : "black",
-    "beer bottle" : "blue",
-    "cup" : "green",
+    "beer bottle" : "green",
+    "cup" : "black",
     "water bottle": "blue",
     "pop bottle, soda bottle":"blue",
-    "packet":"yellow"
+    "packet":"yellow",
+    "granny smith":"black",
+    "screw":"gray",
+    "nail":"gray"
 }
 
 ResNetWeights = models.ResNet152_Weights.IMAGENET1K_V2
