@@ -34,6 +34,7 @@ pip install numpy
 pip install pytorch
 pip install torchvision
 pip install opencv-python
+pip install flask_cors
 ```
 
 4. Inicie el servidor front-end ejecutando el siguiente comando en el directorio `frontend`:
@@ -45,7 +46,6 @@ npm start
 5. Inicie el servidor back-end ejecutando el siguiente comando en el directorio `backend`:
 
 ```console
-source venv/bin/activate
 python app.py
 ```
 
