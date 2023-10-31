@@ -31,10 +31,11 @@ npm install
 ```console
 pip install flask
 pip install numpy
+pip install pyttsx3
 pip install pytorch
+pip install flask_cors
 pip install torchvision
 pip install opencv-python
-pip install flask_cors
 ```
 
 4. Inicie el servidor front-end ejecutando el siguiente comando en el directorio `frontend`:
