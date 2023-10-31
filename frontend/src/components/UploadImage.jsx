@@ -14,8 +14,7 @@ export default function UploadImage() {
   const [tipoBasura, setTipoBasura] = useState(null);
   // green, black (landfill), yellow (clean paper), blue (recycle)
 
-  const reproducirAudio = (data)=>{
-
+  const actualizar = (data)=>{
     if(data==="blue"){
       setTipoBasura('Reciclaje');
     }
@@ -27,14 +26,9 @@ export default function UploadImage() {
     }
     else if(data==="yellow"){
       setTipoBasura('Papel');
-    } else if(data==="false"){
+    } else {
       setTipoBasura('No identificado');
     }
-
-
-    
-
-
   }
 
   const handleFileSelect = (event) => {
@@ -78,18 +72,14 @@ export default function UploadImage() {
           }
           else if(res.data==="yellow"){
             sonido='Papel';
-          } else if(res.data==="false"){
+          } else{
             sonido='No identificado';
-          }
-
-          if (res.data != null){
-            const synth = window.speechSynthesis;
-            const utterance = new SpeechSynthesisUtterance(sonido);
-            synth.speak(utterance);
-          }
+          } 
+          const synth = window.speechSynthesis;
+          const utterance = new SpeechSynthesisUtterance(sonido);
+          synth.speak(utterance);
           
-          reproducirAudio(res.data);
-          console.log("hola");
+          actualizar(res.data);
 
           setState((prev) => ({ ...prev, imageResult: res.data }));
           document.querySelector("input[type='file']").value = "";
