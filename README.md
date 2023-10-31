@@ -1,4 +1,4 @@
-# REviviendo sentidos
+# REabriendo sentidos
 
 Este repositorio esta dedicado a la demo del aplicativo REviviendo sentidos es una aplicación web que utiliza inteligencia artificial (IA) para clasificar la basura basándose en imágenes. Los usuarios pueden hacer una foto de su basura con la cámara de su dispositivo y subirla a nuestra web. 
 
