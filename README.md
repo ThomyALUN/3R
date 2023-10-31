@@ -1,66 +1,63 @@
-🏆 Winner of RootHacks 2023 "WiCS Women in Tech Award - Best project with at least one women-identifying or non-binary student on their team" 🏆
+# REviviendo sentidos
 
-# BinIt!
+Este repositorio esta dedicado a la demo del aplicativo REviviendo sentidos es una aplicación web que utiliza inteligencia artificial (IA) para clasificar la basura basándose en imágenes. Los usuarios pueden hacer una foto de su basura con la cámara de su dispositivo y subirla a nuestra web. 
 
-BinIt is a web application that uses artificial intelligence (AI) to sort trash based on images. Users can take a photo of their trash using their device's camera and upload it onto our website. Then, BinIt will use computer vision and machine learning algorithms to identify the type of waste and suggest the correct bin to put it in.
+## Características
 
-## Features
+Actualmente, permite clasificar materiales reciclables como plásticos, vidrio y metales, así como residuos no reciclables como restos de comida o papel. La aplicación también incluye las siguientes características
 
-BinIt currently supports sorting of recyclable materials like plastics, glass, and metals, as well as non-recyclable waste like food scraps or paper. The application also includes the following features:
+- Interfaz fácil de usar para hacer y subir fotos
+- Información en tiempo real sobre el tipo de basura y recomendaciones de contenedores
+- API Flask backend para gestionar el reconocimiento de imágenes y las recomendaciones de papeleras
+- Modelo de IA basado en TensorFlow y Keras para el reconocimiento preciso de imágenes
+- Implementación de sonidos (voz) según cada categoría identificada
 
-- User-friendly interface for taking and uploading photos
-- Real-time feedback on the type of trash and bin recommendations
-- Backend Flask API to handle image recognition and bin recommendations
-- TensorFlow and Keras-based AI model for accurate image recognition
+## Instalación
 
-## Demo
+Para instalar y ejecutar la demo, son necesarios los siguientes pasos:
 
-![Demo](frontend/public/binit-gif-demo.gif)
+1. Clone el repositorio de GitHub en tu compútador utilizando el siguiente comando:
+   `git clone https://github.com/ThomyALUN/3R.git`
 
-## Installation
-
-To install and run BinIt, you'll need to follow these steps:
-
-1. Clone the GitHub repository to your local machine using the following command:
-   `git clone https://github.com/jimmyzhng/roothacks-project.git`
-
-2. Install the front-end dependencies by running the following command in the `frontend` directory:
+2. Instale las dependencias del front-end ejecutando el siguiente comando en el directorio `frontend`:
 
 ```console
 pip install node
 npm install
 ```
 
-3. Install the back-end dependencies by running the following command in the `backend` directory:
+3. Instale las dependencias del back-end ejecutando el siguiente comando en el directorio `backend`:
 
 ```console
 pip install flask
 pip install numpy
 pip install pytorch
+pip install torchvision
 pip install opencv-python
 ```
 
-4. Start the front-end server by running the following command in the `frontend` directory:
+4. Inicie el servidor front-end ejecutando el siguiente comando en el directorio `frontend`:
 
 ```console
 npm start
 ```
 
-5. Start the back-end server by running the following command in the `backend` directory:
+5. Inicie el servidor back-end ejecutando el siguiente comando en el directorio `backend`:
 
 ```console
 source venv/bin/activate
 python app.py
 ```
 
-6. Open your web browser and navigate to `http://localhost:3000` to access the BinIt application.
+6. Abra su navegador web y navegue hasta `http://localhost:3000` para acceder al aplicativo.
 
-## Usage
+## Uso
 
-To use BinIt, follow these steps:
+Para usarlo, realizar los siguientes pasos:
 
-1. Open the BinIt application in your web browser.
-2. Click the "Select Photo" button, and choose an image of your choice.
-3. When clicked, a preview of your image will show up on our application.
-4. When you click upload image, BinIt will automatically recognize the item and suggest the correct bin to put it in.
-5. Repeat the process for additional items.
+1. Abra la aplicación BinIt en su navegador web.
+2. Haga clic en el botón "Seleccionar foto" y elija una imagen de su elección.
+3. Al hacer clic, una vista previa de su imagen se mostrará en nuestra aplicación.
+4. Al hacer clic en cargar imagen, se reconocerá automáticamente el elemento y sugerirá el contenedor correcto para colocarlo.
+5. Repita el proceso para otros artículos.
+
