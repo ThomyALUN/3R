@@ -3,7 +3,6 @@ from flask_cors import CORS
 from obj_detect import trash_detect
 import base64
 import numpy as np
-import pyttsx3
 from torchvision import models
 
 

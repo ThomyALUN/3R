@@ -31,7 +31,6 @@ npm install
 ```console
 pip install flask
 pip install numpy
-pip install pyttsx3
 pip install pytorch
 pip install flask_cors
 pip install torchvision
